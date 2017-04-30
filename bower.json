@@ -1,0 +1,15 @@
+{
+  "name": "Labb 2",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7",
+    "polymer": "polymer/polymer#^1.9.1",
+    "app-layout": "PolymerElements/app-layout#^1.0.1",
+    "paper-input": "PolymerElements/paper-input#^1.1.24",
+    "paper-progress": "PolymerElements/paper-progress#^1.0.12",
+    "paper-styles": "PolymerElements/paper-styles#^1.2.1",
+    "iron-icons": "PolymerElements/iron-icons#^1.2.1",
+    "paper-icon-button": "PolymerElements/paper-icon-button#^1.1.5",
+    "iron-pages": "PolymerElements/iron-pages/iron-pages#^1.0.9"
+  }
+}
