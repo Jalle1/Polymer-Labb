@@ -1,0 +1,22 @@
+<link href="../bower_components/polymer/polymer.html" rel="import">
+<link href="../bower_components/app-route/app-route.html" rel="import">
+<link href="../bower_components/app-route/app-location.html" rel="import">
+<link href="../bower_components/iron-pages/iron-pages.html" rel="import">
+<link href="standard-element.html" rel="import">
+<link href="calculator-element.html" rel="import">
+
+
+<dom-module id="app-custom-route">
+    <template>
+
+        <app-location route="{{route}}" use-hash-as-path></app-location>
+
+        <app-route data="{{data}}" pattern=":page" route="{{route}}"></app-route>
+
+        <iron-pages attr-for-selected="name" selected="[[data.page]]">
+            <standard-element name="standard-element"></standard-element>
+            <calculator-element name="calculator-element"></calculator-element>
+        </iron-pages>
+    </template>
+    <script>Polymer({ is: 'app-custom-route' });</script>
+</dom-module>

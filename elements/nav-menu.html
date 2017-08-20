@@ -1,0 +1,33 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<dom-module id="nav-menu">
+
+    <style>
+        ul {
+            list-style: none;
+        }
+
+        li {
+            font-family: "arial";
+            font-size: 20px;
+            padding: 25px 0 25px 0;
+        }
+
+        li > a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+
+    <template>
+        <ul>
+            <li><a href="#standard-element">Start Page</a></li>
+            <li><a href="#calculator-element">Calculator</a></li>
+        </ul>
+    </template>
+
+</dom-module>
+
+<script>
+    Polymer({is: 'nav-menu'});
+</script>﻿

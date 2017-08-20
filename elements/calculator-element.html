@@ -1,0 +1,135 @@
+<link href="../bower_components/polymer/polymer.html" rel="import">
+<link href="../bower_components/paper-card/paper-card.html" rel="import">
+<link href="../bower_components/paper-styles/paper-styles.html" rel="import">
+<link href="../bower_components/paper-input/paper-input.html" rel="import">
+<link href="../bower_components/paper-icon-button/paper-icon-button.html" rel="import">
+<link href="../bower_components/paper-icon-button/paper-icon-button-light.html" rel="import">
+
+<dom-module id="calculator-element">
+
+    <template>
+        <style>
+            paper-card {
+                width: 25%;
+                height: 25%;
+                max-width: 25%;
+                overflow: hidden;
+                float: left
+            }
+            p.center {
+                text-align: center;
+            }
+            :root { --bg: { background-color: silver;  } }
+          #a { @apply(--bg); padding: 1em; }
+          #b { @apply(--bg); padding: 5em; }
+          #c { @apply(--bg); padding: 10em; }
+        </style>
+
+        <paper-card>
+
+            <h1>Miniräknare som plussar</h1>
+
+            <paper-input always-float-label label="Första" type="number"  value="{{field1}}">
+               
+            </paper-input>
+
+            <p class="center"><paper-button>+</button></p>
+
+            <paper-input always-float-label label="Andra" type="number" value="{{field2}}" >
+                
+            </paper-input>
+
+            <p>[[_calcNumbers(field1, field2)]]</p>
+
+    </paper-card>
+
+    <paper-card>
+
+            <h1>Miniräknare som Dividerar</h1>
+
+            <paper-input always-float-label label="Första" type="number"  value="{{input1}}">
+               
+            </paper-input>
+
+            <p class="center"><paper-button>/</button></p>
+
+            <paper-input always-float-label label="Andra" type="number" value="{{input2}}" >
+                
+            </paper-input>
+
+            <p>[[_calcInputs(input1, input2)]]</p>
+
+    </paper-card>
+
+    <paper-card>
+
+            <h1>Miniräknare som Gångrar</h1>
+
+            <paper-input always-float-label label="Första" type="number"  value="{{inputfield1}}">
+               
+            </paper-input>
+
+            <p class="center"><paper-button>*</button></p>
+
+            <paper-input always-float-label label="Andra" type="number" value="{{inputfield2}}" >
+                
+            </paper-input>
+
+            <p>[[_calcMult(inputfield1, inputfield2)]]</p>
+
+    </paper-card>
+
+    <paper-card>
+
+            <h1>Miniräknare som subtraherar</h1>
+
+            <paper-input always-float-label label="Första" type="number"  value="{{minus1}}">
+               
+            </paper-input>
+
+            <p class="center"><paper-button>/</button></p>
+
+            <paper-input always-float-label label="Andra" type="number" value="{{minus2}}" >
+                
+            </paper-input>
+
+            <p>[[_calcMinus(minus1, minus2)]]</p>
+
+    </paper-card>
+
+     <iron-pages id="myPage" selected="0">
+        <div id="a">One</div>
+        <div id="b">Two</div>
+        <div id="c">Three</div>
+      </iron-pages>
+
+      <button on-click="changePage">Byt sida</button>
+                    <br>
+ 
+           <br>
+
+    </template>
+
+    <script>
+        Polymer({
+            is: 'calculator-element',
+
+             changePage: function(){
+              this.$.myPage.selectNext();
+            },
+            //MiniRäknare
+              _calcNumbers: function(field1, field2) {
+                return parseInt(field1) + parseInt(field2);
+            },
+              _calcInputs: function(inputfield1, inputfield2) {
+                return parseInt(inputfield1) / parseInt(inputfield2);
+            },
+              _calcMult: function(inputfield1, inputfield2) {
+                return parseInt(inputfield1) * parseInt(inputfield2);
+            },
+              _calcMinus: function(inputfield1, inputfield2) {
+                return parseInt(inputfield1) - parseInt(inputfield2);
+            },
+        });
+    </script>
+</dom-module>

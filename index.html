@@ -1,42 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>Labb 2</title>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+    <title>Laboration</title>
+
     <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-     <link href="first-components.html" rel="import"> 
-	  <link rel="import" href="bower_components/app-layout/app-layout.html">
-    <link rel="import" href="bower_components/paper-progress/paper-progress.html"> 
-    <link rel="import" href="bower_components/paper-styles/paper-styles.html">
-    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
-    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
-    <link rel="import" href="bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
-    <link rel="import" href="bower_components/app-layout/app-drawer/app-drawer.html">
-    <link rel="import" href="bower_components/app-layout/app-scroll-effects/app-scroll-effects.html">
-    <link rel="import" href="bower_components/app-layout/app-header/app-header.html">
-    <link rel="import" href="bower_components/app-layout/app-header-layout/app-header-layout.html">
-    <link rel="import" href="bower_components/app-layout/app-toolbar/app-toolbar.html">
-    <link rel="import" href="bower_components/app-layout/demo/sample-content.html">
-    <link rel="import" href="bower_components/google-map/google-map.html">
-    <link rel="import" href="bower_components/paper-input/paper-input.html">
-    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+
+    <link href="bower_components/app-layout/app-layout.html" rel="import" >
+    <link href="bower_components/paper-card/paper-card.html" rel="import">
+    <link href="bower_components/paper-styles/paper-styles.html" rel="import">
+    <link href="bower_components/paper-menu/paper-menu.html" rel="import">
+    <link href="bower_components/paper-menu/paper-menu-shared-styles.html" rel="import">
+    <link href="bower_components/paper-button/paper-button.html" rel="import">
+    <link href="bower_components/paper-fab/paper-fab.html" rel="import">
+    <link href="bower_components/paper-icon-button/paper-icon-button.html" rel="import">
+    <link href="bower_components/paper-icon-button/paper-icon-button-light.html" rel="import">
+    <link href="bower_components/iron-icon/iron-icon.html" rel="import">
+    <link href="bower_components/iron-icons/iron-icons.html" rel="import">
+    <link href="bower_components/iron-icons/communication-icons.html" rel="import">
+    <link href="bower_components/iron-flex-layout/iron-flex-layout-classes.html" rel="import">
+
+    <link href="elements/nav-menu.html" rel="import">
+    <link href="elements/app-custom-route.html" rel="import">
+    <link href="elements/element.html" rel="import">
+    <link href="elements/calculator.html" rel="import">
+
+    <style is="custom-style">
+        paper-card.header {
+            --paper-card-background-color: blue;
+            width: 100%;
+            height: 100px;
+        }
+
+        paper-card h1 {
+            line-height: 50px;
+            color: red;
+            float: left;
+            margin-left: 15px;
+        }
+
+        paper-icon-button.icon {
+            margin: 20px 20px 0 0;
+            color: red;
+            float: right;
+        }
+
+    </style>
 
 
-    <style is="custom-style"></style>
-  </head>
+</head>
+<body>
 
-<body style="text-align: center;">
+    <app-header-layout>
+        <app-toolbar>
+            <paper-card class="header">
+                <h1>Polymer</h1>
+                <paper-icon-button onclick="drawer.toggle()" icon="menu" title="Menu" class="icon"></paper-icon-button>
+            </paper-card>
+        </app-toolbar>
+    </app-header-layout>
 
-<first-components></first-comopnents>
+    <main>
 
-<google-map latitude="57.65" longitude="12.016667" api-key="AIzaSyAvh-KnNl453faq-gFGr5pzrXDR9g1jVwg"></google-map> 
+        <app-drawer id="drawer">
+            <nav-menu></nav-menu>
+        </app-drawer>
 
-<footer>
-  &copy; Polymer, Labb 2
-</footer>
+        <app-custom-route> </app-custom-route>
 
-<script src="script.js"></script>
+    </main>
+
 
 </body>
 </html>
